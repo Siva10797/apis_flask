@@ -1,0 +1,444 @@
+#-------------------------------Postman_endpoints-----------------------------------------#
+
+http://127.0.0.1:5001/api/signup
+http://127.0.0.1:5001/api/signin
+http://127.0.0.1:5001/view_application
+http://127.0.0.1:5001/add_data_application
+
+uploads files:
+---------------------
+http://127.0.0.1:5001/upload_file_configrations
+http://127.0.0.1:5001/get-configurations/<int:application_id> added = application_id
+http://127.0.0.1:5001/delete-configuration/<int:config_id>
+http://127.0.0.1:5001/download-configuration/<int:config_id>
+
+http://127.0.0.1:5001/customers
+http://127.0.0.1:5001/customer-applications/<int:customer_id>
+http://127.0.0.1:5001/dashboard-summary
+http://127.0.0.1:5001/user-applications/<int:user_id>
+http://127.0.0.1:5001/add-git-connection
+http://127.0.0.1:5001/add-jira-connection
+
+
+view :
+http://127.0.0.1:5001/get-view-documents/<int:application_id>
+http://127.0.0.1:5001/git-view-connection/<int:application_id>
+http://127.0.0.1:5001/view-jira-connection/<int:application_id>
+
+delete :
+http://127.0.0.1:5001/delete-configuration/<int:config_id>
+http://127.0.0.1:5001/git-delete-connection/<int:application_id>
+http://127.0.0.1:5001/delete-jira-connection/<int:application_id>
+
+
+update :
+http://127.0.0.1:5001/git-update-connection/<int:application_id>
+http://127.0.0.1:5001/update-jira-connection/<int:application_id>
+
+
+
+users :
+http://127.0.0.1:5001/users
+http://127.0.0.1:5001/view_users/<int:user_id>
+http://127.0.0.1:5001/add_users
+http://127.0.0.1:5001/update_users/<int:user_id>
+http://127.0.0.1:5001/delete_users/<int:user_id>
+
+
+
+user_roles :
+http://127.0.0.1:5001/user_roles
+http://127.0.0.1:5001/view_user_roles/<int:user_id>
+http://127.0.0.1:5001/add_user_roles
+http://127.0.0.1:5001/update_user_roles/<int:user_id>
+http://127.0.0.1:5001/delete_user_roles/<int:user_id>
+
+
+department:
+------------
+http://127.0.0.1:5001/add_departments
+http://127.0.0.1:5001/get_departments
+http://127.0.0.1:5001/id_departments/<int:department_id>
+http://127.0.0.1:5001/update_departments/<int:department_id>
+http://127.0.0.1:5001/delete_departments/<int:department_id>
+
+
+Customers :
+--------------
+http://127.0.0.1:5001/customers
+http://127.0.0.1:5001/get_customer_by_id/<int:customer_id>
+http://127.0.0.1:5001/add_customers
+http://127.0.0.1:5001/update_customers/<int:customer_id>
+http://127.0.0.1:5001/delete_customers/<int:customer_id>
+
+discovery_messages:
+-------------------
+GET session_id based:
+http://127.0.0.1:5001/discovery_messages/<int:session_id>
+
+GET all data:
+http://127.0.0.1:5001/discovery_messages
+
+Post:
+http://127.0.0.1:5001/discovery_messages
+
+
+
+
+discovery_session:
+-------------------
+GET user_id based:
+http://127.0.0.1:5001/discovery_sessions/<int:user_id>
+
+Post:
+http://127.0.0.1:5001/discovery_session
+
+
+#---------------------New_application_inserts(Add_Applications)--------------------------------
+
+http://127.0.0.1:5001/api/upload-config   (Post)
+http://127.0.0.1:5001/api/upload-get_config_all    (Get_view)  
+http://127.0.0.1:5001/api/upload_put-config
+http://127.0.0.1:5001/api/upload-config/<int:application_id>
+
+
+#-----------------------------Postman requests  Post request--------------------------------------------#
+
+users :
+{
+  "username": "john_doe",
+  "email": "john@example.com",
+  "password_hash": "hashed_password123",
+  "enrolled": "yes",
+  "role_id": 1
+}
+
+
+#--------------user_password_auto_generate--------------
+{
+  "username": "john_doe",
+  "email": "john@example.com",
+  "enrolled": true,
+  "role_id": 2
+}
+
+----------------------------------------------------
+
+
+user_roles :
+{
+  "role_name": "Admin"
+}
+
+
+application : 
+------------------------
+{
+    "application_name": "Test App",
+    "description": "This is a test application"
+}
+
+application_users :
+--------------------
+
+post :
+------
+{
+  "application_id": 1,
+  "user_id": 1001,
+  "role_in_app": "Editor"
+}
+
+put :
+------
+{
+  "role_in_app": "Admin"
+}
+
+
+department :
+------------
+
+{
+  "department_name": "Finance"
+}
+
+
+
+Customer :
+------------
+
+{
+  "customer_name": "Acme Corporation"
+}
+
+
+
+git-config :
+-----------
+{
+  "application_id": 1,
+  "repo_url": "https://github.com/yourusername/your-repo.git",
+  "auth_type": "HTTPS",            // or "SSH"
+  "username": "your-username",     // only for HTTPS
+  "access_token": "your-token",    // only for HTTPS
+  "ssh_key": null,                 // only for SSH (set to actual key string)
+  "ssh_passphrase": null,          // optional for SSH
+  "default_branch": "main"
+}
+
+jira-config :
+---------------
+
+{
+  "application_id": 1,
+  "jira_base_url": "https://yourcompany.atlassian.net",
+  "project_key": "PROJ",
+  "auth_type": "API_TOKEN",         // or "OAUTH"
+  "jira_email": "user@example.com", // required for API_TOKEN
+  "jira_api_token": "your-api-token",             // required for API_TOKEN
+  "oauth_client_id": null,          // required for OAUTH
+  "oauth_client_secret": null       // required for OAUTH
+}
+
+
+discovery session :
+-----------------------
+{
+  "UserId": 1,
+  "Title": "Search Logs",
+  "IsFavorite": true
+}
+
+discovery message :
+-----------------------
+
+{
+  "SessionId": 1,
+  "Sender": "user",
+  "Content": "What is the capital of France?",
+  "Metadata": {
+    "language": "en"
+  }
+}
+
+
+Add application :
+------------------
+
+{
+  "application_name": "MyApp_3",
+  "customer_id": 10,
+  "department_id": 1,
+  "user_ids": [1,2,3]
+}
+
+
+#----------------------------------------------------------------------------
+
+discovery_messages and discovery_session insert values :
+----------------------------------------------------------
+
+{ "UserId": 1, "Title": "Search Logs", "IsFavorite": true },
+  { "UserId": 2, "Title": "Error Tracking", "IsFavorite": false },
+  { "UserId": 3, "Title": "API Debugging", "IsFavorite": true },
+  { "UserId": 4, "Title": "Performance Check", "IsFavorite": false },
+  { "UserId": 5, "Title": "Feature Exploration", "IsFavorite": true },
+  { "UserId": 6, "Title": "Bug Reports", "IsFavorite": false },
+  { "UserId": 7, "Title": "UI Review", "IsFavorite": true },
+  { "UserId": 8, "Title": "User Feedback", "IsFavorite": false },
+  { "UserId": 9, "Title": "Deployment Notes", "IsFavorite": true },
+  { "UserId": 10, "Title": "System Logs", "IsFavorite": false }
+ 
+[
+  {
+    "SessionId": 1,
+    "Sender": "user",
+    "Content": "What is the capital of France?",
+    "Metadata": { "language": "en" }
+  },
+  {
+    "SessionId": 1,
+    "Sender": "assistant",
+    "Content": "The capital of France is Paris.",
+    "Metadata": { "confidence": "high" }
+  },
+  {
+    "SessionId": 2,
+    "Sender": "user",
+    "Content": "Show me error logs for today.",3
+    "Metadata": { "log_type": "error", "date": "2025-07-17" }
+  },
+  {
+    "SessionId": 2,
+    "Sender": "assistant",
+    "Content": "Displaying error logs for 2025-07-17.",
+    "Metadata": { "entries_found": 42 }
+  },
+  {
+    "SessionId": 3,
+    "Sender": "user",
+    "Content": "Explain neural networks in simple terms.",
+    "Metadata": { "topic": "AI" }
+  },
+  {
+    "SessionId": 3,
+    "Sender": "assistant",
+    "Content": "A neural network is a system that learns patterns like a brain.",
+    "Metadata": { "level": "beginner" }
+  },
+  {
+    "SessionId": 4,
+    "Sender": "user",
+    "Content": "Generate a report summary.",
+    "Metadata": { "report_type": "monthly" }
+  },
+  {
+    "SessionId": 4,
+    "Sender": "assistant",
+    "Content": "Monthly report summary is ready for download.",
+    "Metadata": { "status": "success" }
+  },
+  {
+    "SessionId": 5,
+    "Sender": "user",
+    "Content": "Translate 'Hello' to Spanish.",
+    "Metadata": { "source": "en", "target": "es" }
+  },
+  {
+    "SessionId": 5,
+    "Sender": "assistant",
+    "Content": "Hola",
+    "Metadata": { "translation_accuracy": "high" }
+  }
+]
+ 
+SELECT * FROM public."DiscoveryQuerySession"
+ 
+SELECT * FROM public."DiscoveryQueryMessage"
+ 
+SELECT * FROM public."DiscoveryQueryMessage" where "SessionId" = 2
+ 
+SELECT * FROM public."DiscoveryQuerySession" where "UserId" = 2
+
+#-------------------------------------END------------------------------
+
+
+
+
+ #------------------App.py-------------------#
+
+
+
+# @app.route('/api/signin', methods=['POST'])
+# def signin():
+#     data = request.json
+#     email = data.get('email')
+#     password = data.get('password')
+#     db = SessionLocal()
+#     user = db.query(User).filter(User.email == email).first()
+#     db.close()
+#     if user and bcrypt.verify(password, user.password_hash):
+#         return jsonify({'message': 'Login successful', 'user': {
+#             'user_id': user.user_id,
+#             'username': user.username,
+#             'email': user.email,
+#             'role_id': user.role_id,
+#             'enrolled': user.enrolled,
+#             'created_at': str(user.created_at)
+#         }})
+#     else:
+#         return jsonify({'error': 'Invalid credentials'}), 401
+
+
+#------------------------user_id and session_id-------------------#
+
+# @app.route('/discovery_sessions/<int:user_id>', methods=['GET'])
+# def get_sessions_by_user(user_id):
+#     db = SessionLocal()
+#     try:
+#         sessions = db.query(DiscoveryQuerySession).filter(DiscoveryQuerySession.UserId == user_id).all()
+#         result = []
+#         for session in sessions:
+#             result.append({
+#                 'Id': session.Id,
+#                 'UserId': session.UserId,
+#                 'Title': session.Title,
+#                 'IsFavorite': session.IsFavorite,
+#                 'CreatedAt': session.CreatedAt.isoformat(),
+#                 'UpdatedAt': session.UpdatedAt.isoformat()
+#             })
+#         return jsonify({'sessions': result}), 200
+#     except Exception as e:
+#         return jsonify({'error': str(e)}), 500
+#     finally:
+#         db.close()
+    
+    
+    
+#-----------------------Model.py------------------------------------------
+
+# class Application(Base):
+#     __tablename__ = 'applications'
+
+#     application_id = Column(Integer, primary_key=True, index=True)
+#     application_name = Column(String(100), nullable=False)
+#     description = Column(String(255))
+#     created_at = Column(DateTime, default=datetime.utcnow)
+
+#     configurations = relationship("Configurations", back_populates="application")
+#     # application_users = relationship("ApplicationUser", back_populates="application")
+    
+#     application_users = relationship("ApplicationUsers", back_populates="application", cascade="all, delete")
+
+
+#     def __repr__(self):
+#         return f"<Application(name={self.application_name})>"
+
+
+
+# class ApplicationUser(Base):
+#     __tablename__ = 'application_users'
+
+#     id = Column(Integer, primary_key=True, index=True)
+#     application_id = Column(Integer, ForeignKey('applications.application_id'), nullable=False)
+#     user_id = Column(Integer, nullable=False)
+#     role_inapp = Column(String(50))
+#     assigned_at = Column(DateTime, default=datetime.utcnow)
+
+    
+#     application = relationship("Application", back_populates="application_users")
+
+
+
+# class ApplicationUser(Base):
+#     __tablename__ = 'application_users'
+
+#     application_id = Column(Integer, ForeignKey('application.application_id'), nullable=False)
+#     user_id = Column(Integer, nullable=False)
+#     role_inapp = Column(String(100))
+#     assigned_at = Column(DateTime, default=datetime.utcnow)
+
+    
+#     application = relationship("Application", back_populates="application_users")
+
+
+#     __table_args__ = (
+#         PrimaryKeyConstraint('application_id', 'user_id'),
+#     )
+    
+    
+
+
+# class DiscoveryQueryMessage(Base):
+#     __tablename__ = 'DiscoveryQueryMessage'
+
+#     Id = Column(BigInteger, primary_key=True, autoincrement=True)
+#     SessionId = Column(Integer, nullable=False)
+#     Sender = Column(Text, nullable=False)
+#     Content = Column(Text, nullable=False)
+#     Metadata = Column(JSON)
+#     CreatedAt = Column(TIMESTAMP(timezone=True), nullable=False, server_default=func.now())
+
+#     __table_args__ = (
+#         CheckConstraint("Sender IN ('user', 'assistant')", name='sender_check'),)

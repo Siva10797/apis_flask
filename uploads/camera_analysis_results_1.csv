@@ -1,0 +1,31 @@
+Image _Name,Dirt Percentage,Predicted Class,RAG Status,Visibility Score,date,year,month,monthly_cleaning_count
+-1-8_full_jpg.rf.84f5db79c70435234cab8ee218eca825.jpg,60.65,Blur,Amber - Moderate Dirt,96,01-05-2024,2024,5,2
+-2-1_full_jpg.rf.23a91e9e48473fc8150a78595b90a83e.jpg,76.96,Blur,Red - Heavy Dirt,69.42,15-05-2024,2024,5,2
+1133.jpg,87.49,Blur,Red - Heavy Dirt,19.59,01-06-2024,2024,6,2
+39d4ab208745021.Y3JvcCwxMDgwLDg0NCwwLDI1MQ.jpeg,84.38,Tinted,Red - Heavy Dirt,48.38,20-06-2024,2024,6,2
+Blurimg01_00027.jpg,91.8,Blur,Red - Heavy Dirt,13.27,01-07-2024,2024,7,3
+Blurimg1.jpg,86.15,Blur,Red - Heavy Dirt,29.24,03-07-2024,2024,7,3
+Blur_img_00077.jpg,68.22,Blur,Amber - Moderate Dirt,97.46,10-07-2024,2024,7,3
+fog images_96.jpg,29.29,foggy,Bad Weather,23.24,01-06-2024,2024,6,2
+frame_00058.jpg,10.15,Clear,Green - Clear,94.8,02-06-2024,2024,6,2
+Image01_00000.jpg,10.75,Clear,Green - Clear,94.04,03-06-2024,2024,5,1
+Image02_00316.jpg,11.03,Clear,Green - Clear,93.51,04-06-2024,2024,1,1
+image1_38_aug1.png,79.15,Dust,Red - Heavy Dirt,56.22,05-06-2024,2024,3,1
+image1_8.png,80.69,Dust,Red - Heavy Dirt,54.54,06-06-2024,2024,2,1
+image4_4 (27).png,17.54,rainy,Bad Weather,70.13,07-06-2024,2024,2,1
+images (1).jpg,75.05,Blur,Red - Heavy Dirt,71.69,08-06-2024,2024,2,1
+images (3)_aug2.jpg,88.13,stickers,Red - Heavy Dirt,30.17,09-06-2024,2024,2,1
+images_2_aug3.jpg,72.92,stickers,Amber - Moderate Dirt,90.39,10-06-2024,2024,4,1
+images_3_aug3.jpg,81.38,stickers,Red - Heavy Dirt,54.51,11-06-2024,2024,5,1
+Screenshot 2025-07-01 094850.png,68.31,Blur,Amber - Moderate Dirt,97.95,12-06-2024,2024,6,1
+Screenshot 2025-07-01 094859.png,70.56,stickers,Amber - Moderate Dirt,94.07,13-06-2024,2024,7,2
+Screenshot 2025-07-01 094923.png,6.31,rainy,Bad Weather,101.27,14-06-2024,2024,8,2
+Screenshot 2025-07-01 094940.png,97.72,Blur,Red - Heavy Dirt,6.91,15-06-2024,2024,9,2
+Screenshot 2025-07-01 094957.png,71.7,Blur,Amber - Moderate Dirt,92.45,16-06-2024,2024,10,2
+Screenshot 2025-07-01 095013.png,70.48,Blur,Amber - Moderate Dirt,94.15,17-06-2024,2024,11,2
+Screenshot 2025-07-01 095023.png,72.26,Blur,Amber - Moderate Dirt,91.77,18-06-2024,2024,12,2
+Screenshot 2025-07-01 095039.png,72.77,stickers,Amber - Moderate Dirt,90.77,19-06-2024,2024,8,2
+Screenshot 2025-07-01 095102.png,78.2,Blur,Red - Heavy Dirt,68.33,20-06-2024,2024,9,3
+Screenshot 2025-07-01 095126.png,70.2,Blur,Amber - Moderate Dirt,94.77,21-06-2024,2024,10,3
+Screenshot 2025-07-01 095147.png,71.13,Blur,Amber - Moderate Dirt,93.33,22-06-2024,2024,11,3
+Screenshot 2025-07-01 095213.png,70.02,stickers,Amber - Moderate Dirt,95.29,23-06-2024,2024,12,3
